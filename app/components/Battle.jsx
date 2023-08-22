@@ -115,7 +115,7 @@ export default class Battle extends React.Component {
       <main className="stack main-stack animate-in">
         <div className="split">
           <h1>Players</h1>
-          <Link to={{ pathname: "/results", search: `?playerOne=${playerOne}&playerTwo=${playerTwo}`}}>Battle</Link>
+          <Link to={{ pathname: "/results", search: `?playerOne=${playerOne}&playerTwo=${playerTwo}`}} className={'btn primary' + disabled ? ' disabled' : ''}>Battle</Link>
         </div>
         <section className="grid">
           { playerOne === null ? (
@@ -132,7 +132,6 @@ export default class Battle extends React.Component {
           )}
           { playerTwo === null ? (
             <PlayerInput
-
               label="Player Two"
               onSubmit={(player) => this.handleSubmit('playerTwo', player)}
             />
